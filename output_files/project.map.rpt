@@ -1,0 +1,509 @@
+Analysis & Synthesis report for project
+Mon Mar 19 13:32:08 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "SevenSegmentDecoder:ssd1"
+ 12. Port Connectivity Checks: "SevenSegmentDecoder:ssd"
+ 13. Port Connectivity Checks: "rateDivider:rd"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Mar 19 13:32:08 2018       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; project                                     ;
+; Top-level Entity Name              ; project                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 156                                         ;
+;     Total combinational functions  ; 156                                         ;
+;     Dedicated logic registers      ; 36                                          ;
+; Total registers                    ; 36                                          ;
+; Total pins                         ; 25                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; project            ; project            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                        ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                          ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+; project.v                        ; yes             ; User Verilog HDL File  ; /courses/courses/cscb58w18/hongse10/Project/project.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 156         ;
+;                                             ;             ;
+; Total combinational functions               ; 156         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 77          ;
+;     -- 3 input functions                    ; 42          ;
+;     -- <=2 input functions                  ; 37          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 122         ;
+;     -- arithmetic mode                      ; 34          ;
+;                                             ;             ;
+; Total registers                             ; 36          ;
+;     -- Dedicated logic registers            ; 36          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 25          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[2]~input ;
+; Maximum fan-out                             ; 42          ;
+; Total fan-out                               ; 633         ;
+; Average fan-out                             ; 2.62        ;
++---------------------------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node    ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name         ; Library Name ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+---------------------+--------------+
+; |project                      ; 156 (51)          ; 36 (0)       ; 0           ; 0            ; 0       ; 0         ; 25   ; 0            ; |project                          ; project             ; work         ;
+;    |SevenSegmentDecoder:ssd1| ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|SevenSegmentDecoder:ssd1 ; SevenSegmentDecoder ; work         ;
+;    |SevenSegmentDecoder:ssd|  ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|SevenSegmentDecoder:ssd  ; SevenSegmentDecoder ; work         ;
+;    |displayCounter:dc|        ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|displayCounter:dc        ; displayCounter      ; work         ;
+;    |rateDivider:rd|           ; 66 (66)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |project|rateDivider:rd           ; rateDivider         ; work         ;
++-------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                             ;
++-----------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal              ; Free of Timing Hazards ;
++-----------------------------------------------------+----------------------------------+------------------------+
+; SevenSegmentDecoder:ssd|out[0]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd|out[1]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd|out[2]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd|out[3]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd|out[4]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd|out[5]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd|out[6]                      ; SevenSegmentDecoder:ssd|WideOr0  ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[0]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[1]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[2]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[3]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[4]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[5]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; SevenSegmentDecoder:ssd1|out[6]                     ; SevenSegmentDecoder:ssd1|WideOr0 ; yes                    ;
+; lim[7]                                              ; WideOr30                         ; yes                    ;
+; lim[8]                                              ; WideOr30                         ; yes                    ;
+; lim[9]                                              ; WideOr30                         ; yes                    ;
+; lim[10]                                             ; WideOr30                         ; yes                    ;
+; lim[11]                                             ; WideOr30                         ; yes                    ;
+; lim[12]                                             ; WideOr30                         ; yes                    ;
+; lim[13]                                             ; WideOr30                         ; yes                    ;
+; lim[14]                                             ; WideOr30                         ; yes                    ;
+; lim[15]                                             ; WideOr30                         ; yes                    ;
+; lim[16]                                             ; WideOr30                         ; yes                    ;
+; lim[17]                                             ; WideOr30                         ; yes                    ;
+; lim[18]                                             ; WideOr30                         ; yes                    ;
+; lim[19]                                             ; WideOr30                         ; yes                    ;
+; lim[20]                                             ; WideOr30                         ; yes                    ;
+; lim[21]                                             ; WideOr30                         ; yes                    ;
+; lim[22]                                             ; WideOr30                         ; yes                    ;
+; lim[24]                                             ; WideOr30                         ; yes                    ;
+; lim[25]                                             ; WideOr30                         ; yes                    ;
+; lim[26]                                             ; WideOr30                         ; yes                    ;
+; lim[27]                                             ; WideOr30                         ; yes                    ;
+; Number of user-specified and inferred latches = 34  ;                                  ;                        ;
++-----------------------------------------------------+----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 36    ;
+; Number of registers using Synchronous Clear  ; 8     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |project|displayCounter:dc|out[1] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |project|rateDivider:rd|count[5]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SevenSegmentDecoder:ssd1"                                                                                                                 ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "in[7..4]" will be connected to GND. ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SevenSegmentDecoder:ssd"                                                                                                                  ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                    ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "in[7..4]" will be connected to GND. ;
++------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "rateDivider:rd"  ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; lim[6..0] ; Input ; Info     ; Stuck at VCC ;
+; lim[23]   ; Input ; Info     ; Stuck at VCC ;
++-----------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 25                          ;
+; cycloneiii_ff         ; 36                          ;
+;     ENA SCLR          ; 8                           ;
+;     plain             ; 28                          ;
+; cycloneiii_lcell_comb ; 157                         ;
+;     arith             ; 34                          ;
+;         2 data inputs ; 34                          ;
+;     normal            ; 123                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 42                          ;
+;         4 data inputs ; 77                          ;
+;                       ;                             ;
+; Max LUT depth         ; 4.70                        ;
+; Average LUT depth     ; 2.90                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Mon Mar 19 13:31:59 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off project -c project
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (10229): Verilog HDL Expression warning at project.v(21): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 21
+Warning (10229): Verilog HDL Expression warning at project.v(27): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 27
+Warning (10229): Verilog HDL Expression warning at project.v(28): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 28
+Warning (10229): Verilog HDL Expression warning at project.v(29): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 29
+Warning (10229): Verilog HDL Expression warning at project.v(30): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 30
+Warning (10229): Verilog HDL Expression warning at project.v(31): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 31
+Warning (10229): Verilog HDL Expression warning at project.v(32): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 32
+Warning (10229): Verilog HDL Expression warning at project.v(33): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 33
+Warning (10229): Verilog HDL Expression warning at project.v(34): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 34
+Warning (10229): Verilog HDL Expression warning at project.v(35): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 35
+Warning (10229): Verilog HDL Expression warning at project.v(36): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 36
+Warning (10229): Verilog HDL Expression warning at project.v(37): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 37
+Warning (10229): Verilog HDL Expression warning at project.v(38): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 38
+Warning (10229): Verilog HDL Expression warning at project.v(39): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 39
+Warning (10229): Verilog HDL Expression warning at project.v(40): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 40
+Warning (10229): Verilog HDL Expression warning at project.v(41): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 41
+Warning (10229): Verilog HDL Expression warning at project.v(42): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 42
+Warning (10229): Verilog HDL Expression warning at project.v(43): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 43
+Warning (10229): Verilog HDL Expression warning at project.v(44): truncated literal to match 28 bits File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 44
+Info (12021): Found 4 design units, including 4 entities, in source file project.v
+    Info (12023): Found entity 1: project File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 3
+    Info (12023): Found entity 2: rateDivider File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 57
+    Info (12023): Found entity 3: displayCounter File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 83
+    Info (12023): Found entity 4: SevenSegmentDecoder File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 100
+Info (12127): Elaborating entity "project" for the top level hierarchy
+Warning (10270): Verilog HDL Case Statement warning at project.v(20): incomplete case statement has no default case item File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Warning (10240): Verilog HDL Always Construct warning at project.v(20): inferring latch(es) for variable "lim", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Warning (10034): Output port "GPIO_12" at project.v(9) has no driver File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 9
+Info (10041): Inferred latch for "lim[0]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[1]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[2]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[3]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[4]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[5]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[6]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[7]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[8]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[9]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[10]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[11]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[12]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[13]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[14]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[15]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[16]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[17]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[18]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[19]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[20]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[21]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[22]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[23]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[24]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[25]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[26]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (10041): Inferred latch for "lim[27]" at project.v(20) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Info (12128): Elaborating entity "rateDivider" for hierarchy "rateDivider:rd" File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 48
+Warning (10230): Verilog HDL assignment warning at project.v(80): truncated value with size 32 to match size of target (1) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 80
+Info (12128): Elaborating entity "displayCounter" for hierarchy "displayCounter:dc" File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 49
+Info (12128): Elaborating entity "SevenSegmentDecoder" for hierarchy "SevenSegmentDecoder:ssd" File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 50
+Warning (10270): Verilog HDL Case Statement warning at project.v(106): incomplete case statement has no default case item File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Warning (10240): Verilog HDL Always Construct warning at project.v(106): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[0]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[1]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[2]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[3]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[4]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[5]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Info (10041): Inferred latch for "out[6]" at project.v(106) File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "lim[24]" merged with LATCH primitive "lim[7]" File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[0] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[1] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[2] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[3] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[4] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[5] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd|out[6] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[1] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[0] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[1] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[2] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[3] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[4] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[5] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch SevenSegmentDecoder:ssd1|out[6] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal displayCounter:dc|out[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 90
+Warning (13012): Latch lim[8] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[9] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[10] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[11] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[13] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[14] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[15] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[16] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[17] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[18] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[19] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[20] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[21] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[22] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[4] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[26] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13012): Latch lim[27] has unsafe behavior File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[5] File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 4
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "GPIO_12" is stuck at GND File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "GPIO_11" File: /courses/courses/cscb58w18/hongse10/Project/project.v Line: 6
+Info (21057): Implemented 181 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 156 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
+    Info: Peak virtual memory: 1235 megabytes
+    Info: Processing ended: Mon Mar 19 13:32:08 2018
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
+
+
