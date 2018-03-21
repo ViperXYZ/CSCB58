@@ -2,6 +2,7 @@
 
 module project(SW, HEX0, HEX1, CLOCK_50, GPIO_11, GPIO_12);
 	input [7:0] SW;
+	
 	input CLOCK_50;
 	input GPIO_11;
 	output [6:0] HEX0;
