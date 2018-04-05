@@ -5,8 +5,7 @@ module project(SW, HEX0, HEX1, CLOCK_50, GPIO, LEDR);
 	input CLOCK_50;
    output [20:0] GPIO;
 	output [6:0] HEX0;
-	output [6:0] HEX1;
-	output [17:0] LEDR;
+	output [6:0] HEX1;	output [17:0] LEDR;
 	
 	reg [27:0] lim; 
 	//Get interval delay between pulses
@@ -85,4 +84,35 @@ module stay_on(lim, CLOCK_50, cout, reset, stay_on);
 	end
 
 
-	assign cout = ((count < stay_on) && !(lim == 28'd000000000)) ? 1'b0 : 1'b1
+	assign cout = ((count < stay_on) && !(lim == 28'd000000000)) ? 1'b0 : 1'b1;
+endmodule
+
+module SevenSegmentDecoder(in, out);
+	input[7:0]in;
+	output reg [6:0]out;
+	always @*
+		case(in)
+			8'b0000 : out = ~7'b0111111; //0
+			8'b0001 : out = ~7'b0000110; //1
+			8'b0010 : out = ~7'b1011011; //2
+			8'b0011 : out = ~7'b1001111; //3
+			8'b0100 : out = ~7'b1100110; //4
+			8'b0101 : out = ~7'b1101101; //5 
+			8'b0110 : out = ~7'b1111101; //6
+			8'b0111 : out = ~7'b0000111; //7
+			8'b1000 : out = ~7'b1111111; //8
+			8'b1001 : out = ~7'b1101111; //9
+		endcase
+endmodule 
+
+module LED_PWM(clk, PWM_input, LED);
+	input clk;
+	input [3:0] PWM_input;
+	output LED;
+
+	reg [4:0] PWM;
+	always @(posedge clk) PWM <= PWM[3:0]+PWM_input;
+	assign LED = PWM[4];
+	
+endmodule 
+
